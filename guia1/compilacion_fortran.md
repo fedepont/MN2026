@@ -8,16 +8,16 @@ Supongamos que tenemos un archivo principal llamado `main.f90` en nuestro direct
 
 ```bash
 # Moverse al directorio de trabajo
-usuario@localhost:~$ cd ~/my_folder
+user@localhost:~$ cd ~/my_folder
 # Compilar
-usuario@localhost:~/my_folder/$ gfortran main.f90 -o main.o
+user@localhost:~/my_folder/$ gfortran main.f90 -o main.o
 ```
 
 **Ejecución:**
 
 ```bash
 # Ejecutar el programa compilado
-usuario@localhost:~/my_folder/$ ./main.o
+user@localhost:~/my_folder/$ ./main.o
 ```
     
 **Notas:**
@@ -35,7 +35,7 @@ El script usa advertencias importantes:
 
 ```bash
 # Compilar con advertencias
-usuario@localhost:~/my_folder/$ gfortran -Wall -Wextra -Wconversion -pedantic main.f90 -o main  .o
+user@localhost:~/my_folder/$ gfortran -Wall -Wextra -Wconversion -pedantic main.f90 -o main  .o
 ```
 
 **Notas:**
@@ -51,7 +51,7 @@ Si el programa usa un módulo (por ejemplo `my_module.f90`), hay que compilar am
 
 ```bash
 # Compilar con un modulo
-usuario@localhost:~/my_folder/$ gfortran my_module.f90 main.f90 -o main.o
+user@localhost:~/my_folder/$ gfortran my_module.f90 main.f90 -o main.o
 ```
 
 **Notas:**
@@ -71,7 +71,7 @@ Se pueden agregar flags para detectar errores en tiempo de ejecucion, por ejempl
 
 ```bash
 # Compilar en modo debug y detectar errores
-usuario@localhost:~/my_folder/$ gfortran -std=f2018 -Wall -Wextra -Wconversion -pedantic \
+user@localhost:~/my_folder/$ gfortran -std=f2018 -Wall -Wextra -Wconversion -pedantic \
   -ffpe-trap=zero -ffpe-trap=overflow -ffpe-trap=underflow \
   -g -fbacktrace -fbounds-check -O0 \
   my_module.f90 main.f90 -o main.o
@@ -158,7 +158,7 @@ Para ejecutar el script, primero hay que darle permisos de ejecución y luego co
 
 ```bash
 # Darle permisos de ejecución
-usuario@localhost:~/my_folder/$ chmod +x my_run_script.sh
+user@localhost:~/my_folder/$ chmod +x my_run_script.sh
 # Ejecutar el script
-usuario@localhost:~/my_folder/$ ./my_run_script.sh
-``
+user@localhost:~/my_folder/$ ./my_run_script.sh
+```
