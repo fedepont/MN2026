@@ -38,7 +38,7 @@ set terminal wxt size 800,600 enhanced font 'Helvetica,12' persist
 f(x)=0.5*x+1.
 g(x)=0.4*x+1.2
 ```
-- **`f(x)` y `g(x)`**: Define dos funciones lineales.
+- **`f(x)` y `g(x)`**: Define dos funciones lineales. Notar  que aun las constantes como $1$ se definen con un punto decimal para que gnuplot las interprete como numeros de punto flotante.
 
 ---
 
