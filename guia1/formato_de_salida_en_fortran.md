@@ -19,6 +19,8 @@ write(*, '(especificadores_de_formato)') lista_de_variables
 - **Saltos de línea**: `/` para nueva línea.
 - **Repetición**: Un número antes del especificador (ej. `2f10.2` para dos reales).
 
+**ATENCION: e12.4 indica 12 caracteres totales y 4 decimales. Esto puede aveces no funcionar, ya que estos caracteres deben incluir la E, el signo, el punto y el signo del exponente. Hay que poner suficientes, sino fortran muestra una linea de asteriscos `***************` **
+
 ## Ejemplos:
 - Para mostrar un número real con 2 decimales:  
   ```fortran
