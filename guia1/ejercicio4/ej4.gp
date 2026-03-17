@@ -1,4 +1,5 @@
-set terminal wxt size 800,600 enhanced font 'Helvetica,12' persist
+#set terminal wxt size 800,600 enhanced font 'Helvetica,12' persist
+set terminal qt 0 font "Sans,10" persist
 
 
 f(x)=0.5*x+1.
@@ -16,8 +17,8 @@ set key left top vertical opaque width 1.5 height 1.5
 
 plot 'datos.dat' u 1:2 w p ps 5, \
 'datos.dat' u 1:3 w p, \
-f(x) w l lw 4 lc rgb "blue" t 'linea', \
-g(x) w l
+f(x) w l lw 4 lc rgb "yellow" t 'linea', \
+g(x) w l ; pause mouse close
 
 #Formato largo
 # plot 'datos.dat' using 1:2 with points ps 5, \
