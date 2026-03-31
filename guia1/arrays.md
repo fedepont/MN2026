@@ -1,4 +1,4 @@
-# Arrays en Fortran Moderno
+# Arrays en Fortran
 
 Los arrays son estructuras fundamentales en Fortran que permiten almacenar y manipular colecciones de datos del mismo tipo. A continuación, se describen los conceptos básicos, el uso y las formas comunes de iterar sobre arrays en Fortran moderno.
 
