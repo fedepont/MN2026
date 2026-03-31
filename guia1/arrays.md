@@ -94,14 +94,6 @@ do i = 1, size(array2D, 1)  ! Iterar sobre filas
 end do
 ```
 
-### Usando Bucles `forall`
-El bucle `forall` permite realizar operaciones en paralelo sobre arrays:
-
-```fortran
-forall (i = 1:size(array1D))
-    array1D(i) = array1D(i) * 2
-```
-
 ---
 
 ## 4. **Operaciones Comunes con Arrays**
@@ -118,6 +110,7 @@ minval(array1D)  ! Valor mínimo
 ```fortran
 array1D = array1D + 1  ! Incrementar todos los elementos en 1
 array1D = array1D * 2  ! Multiplicar todos los elementos por 2
+array1D = (/ (i*2, i=1,5) /)
 ```
 
 ### Manipulación de Arrays Multidimensionales
