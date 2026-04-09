@@ -19,6 +19,8 @@ Por ejemplo, en métodos numéricos para encontrar raíces, queremos que `bisecc
 
 ## Estructura General
 
+![interfaces_y_subroutinas](interfaces_y_subroutinas.png)
+
 ### Paso 1: Definir la Interfaz Abstracta
 
 Se define como una función dummy que especifica la firma esperada:
@@ -139,120 +141,7 @@ end program ejemplo
 
 ---
 
-## Ejemplo Completo: Proyecto Típico
 
-### Estructura de directorios
-
-```
-proyecto/
-├── modulos/
-│   └── module_subs.f90      (contiene interfaz y subroutines)
-├── programa_principal.f90   (programa principal con funciones concretas)
-└── Makefile
-```
-
-### Archivo: `modulos/module_subs.f90`
-
-```fortran
-module module_subs
-    use parametros
-    implicit none
-
-contains
-
-    ! ===== INTERFAZ ABSTRACTA =====
-    function interfaz_f(x) result(y)
-        real(kind=pr), intent(in) :: x
-        real(kind=pr)             :: y
-    end function interfaz_f
-
-
-    ! ===== SUBROUTINE GENÉRICA =====
-    subroutine biseccion(f, a, b, tol, tol_abs, unidad, pN, fpN, iter)
-        implicit none
-        procedure(interfaz_f) :: f
-        real(kind=pr), intent(inout) :: a, b
-        real(kind=pr), intent(in)    :: tol, tol_abs
-        integer,       intent(in)    :: unidad
-        real(kind=pr), intent(out)   :: pN, fpN
-        integer,       intent(out)   :: iter
-
-        real(kind=pr) :: p, fp, fa
-        integer       :: n
-
-        iter = 0
-        fa = f(a)
-
-        do n = 1, 100
-            p = (a + b) / 2.0_pr
-            fp = f(p)
-            
-            if (abs(fp) < tol_abs) exit
-            
-            if (fa * fp < 0.0_pr) then
-                b = p
-            else
-                a = p
-                fa = fp
-            end if
-            
-            iter = n
-        end do
-
-        pN = p
-        fpN = fp
-    end subroutine biseccion
-
-end module module_subs
-```
-
-### Archivo: `programa_principal.f90`
-
-```fortran
-program mi_programa
-    use parametros
-    use module_subs
-    implicit none
-
-    real(kind=pr) :: a, b, pN, fpN
-    integer       :: iter, uid
-
-    ! Llamada con función f_a
-    a = -2.0_pr
-    b = 2.0_pr
-    open(unit=10, file='resultado_a.dat', status='replace')
-    call biseccion(f_a, a, b, 1.0e-6_pr, 1.0e-8_pr, 10, pN, fpN, iter)
-    close(10)
-
-    print *, 'Raíz de f_a:', pN, 'iteraciones:', iter
-
-    ! Llamada con función f_b
-    a = 0.0_pr
-    b = 1.0_pr
-    open(unit=10, file='resultado_b.dat', status='replace')
-    call biseccion(f_b, a, b, 1.0e-6_pr, 1.0e-8_pr, 10, pN, fpN, iter)
-    close(10)
-
-    print *, 'Raíz de f_b:', pN, 'iteraciones:', iter
-
-contains
-
-    function f_a(x) result(y)
-        real(kind=pr), intent(in) :: x
-        real(kind=pr)             :: y
-        y = x**2 - 1.0_pr
-    end function f_a
-
-    function f_b(x) result(y)
-        real(kind=pr), intent(in) :: x
-        real(kind=pr)             :: y
-        y = 2.0_pr * x - tan(x)
-    end function f_b
-
-end program mi_programa
-```
-
----
 
 ## Reglas Importantes ⚠️
 
