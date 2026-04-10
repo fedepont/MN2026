@@ -143,7 +143,7 @@ end program ejemplo
 
 
 
-## Reglas Importantes ⚠️
+## Reglas Importantes 
 
 1. **Firma exacta:** Las funciones concretas DEBEN tener exactamente los mismos:
    - Tipo de argumentos de entrada
@@ -158,30 +158,6 @@ end program ejemplo
 
 4. **Sin paréntesis:** Al pasar la función, se usa solo el nombre: `call biseccion(f_a, ...)`, no `call biseccion(f_a(), ...)`
 
----
-
-## Visualización del Flujo
-
-```
-┌──────────────────────────────────────┐
-│   Definir Interfaz Abstracta         │
-│   function interfaz_f(x) result(y)   │
-└────────────────┬─────────────────────┘
-                 │
-    ┌────────────┴────────────┐
-    │                         │
-┌───▼──────────────────┐  ┌──▼──────────────────┐
-│ Subroutine genérica  │  │ Funciones concretas │
-│ procedure(interfaz_f)│  │ function f_a(x)     │
-│         :: f         │  │ function f_b(x)     │
-└───┬──────────────────┘  │ function f_c(x)     │
-    │                     └─────────────────────┘
-    │
-┌───▼─────────────────────┐
-│ Llamada en programa      │
-│ call biseccion(f_a, ...) │
-└──────────────────────────┘
-```
 
 ---
 
@@ -233,11 +209,11 @@ end function
 
 ## Ventajas de Usar Interfaces
 
-✅ **Reutilidad:** Una subroutine funciona con muchas funciones diferentes  
-✅ **Seguridad:** El compilador verifica que las firmas coincidan  
-✅ **Claridad:** Es explícito qué tipo de función se espera  
-✅ **Mantenimiento:** Cambios en la firma se detectan en compilación  
-✅ **Flexibilidad:** Permite código genérico y modular  
+ **Reutilidad:** Una subroutine funciona con muchas funciones diferentes  
+ **Seguridad:** El compilador verifica que las propiedades de cada función coincidan  
+ **Claridad:** Es explícito qué tipo de función se espera  
+ **Mantenimiento:** Cambios en la propiedades se detectan en compilación  
+ **Flexibilidad:** Permite código genérico y modular  
 
 ---
 
