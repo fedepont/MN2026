@@ -96,11 +96,9 @@ A la izquierda tenemos numeros de linea, luego unas direcciones de memoria `004d
 
 Solo vamos a notar que de la linea 52 salta (jmp .L4)  a la 35. Y ahi esta nuestro loop interno.
 
+## La Pregunta ##
+
 Con esto en mente, ¿ Puede decir que sucede con el código mirando la salida del assembler con `-O3`?
 Fijese que si cambia el valor de los limites de las sumatorias, aumentandolas, el tiempo de ejecución aumenta notablemente para el codigo sin optimizar, pero se mantiene constante para el optimizado.
 
-<!-- ```
-32 0023 C744240C              movl    $50005000, 12(%rsp)
-``` -->
 
-<!-- La linea 32 muestra el resultado de la suma! Es decir el compilador, "sabe" cual es la suma de los primeros `N` naturales, y directamente detecta eso en el codigo y escribe el resultado. NO HACE LA SUMA! -->
