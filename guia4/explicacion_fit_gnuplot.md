@@ -171,7 +171,7 @@ $$
 \chi^2 = \sum_i r_i^2
 $$
 
-(si hay pesos: \(r_i/\sigma_i\)).
+(si hay pesos: $r_i/\sigma_i$).
 
 ---
 
@@ -300,9 +300,7 @@ a 1.000
 b -0.987 1.000
 ~~~
 
-$$
-\rho_{ab}=\frac{\text{Cov}(a,b)}{\sigma_a \sigma_b}
-$$	​
+$$\rho_{ab}=\frac{\text{Cov}(a,b)}{\sigma_a \sigma_b}$$	​
 
 Interpretación:
 
@@ -317,7 +315,7 @@ Si $\text{Cov}(a,b)<0$ entonces cuando $a$ aumenta, $b$ disminuye.
 
 Si $\text{Cov}(a,b)=0$ entonces cuando $a$ y $b$ son independientes. Lo que sería lo ideal en este contexto.
 
-La covarianza depende de las unidades, por eso se usa más:
+La covarianza depende de las unidades, por eso se usa más la matriz de correlación.
 
 ---
 
@@ -352,22 +350,5 @@ El `fit.log` refleja:
 - Ajuste dinámico de $\lambda$
 - Geometría local del mínimo (errores)
 - Dependencia entre parámetros (correlaciones)
-
----
-
-# 6. Resumen conceptual
-
-El ajuste no lineal en Gnuplot implementa:
-
-$$
-(J^T J + \lambda I)\Delta \theta = J^T r
-$$
-
-y el `fit.log` es un registro completo de:
-
-- la evolución iterativa
-- la calidad del ajuste
-- la incertidumbre de los parámetros
-- la estructura matemática del problema
 
 ---
