@@ -245,10 +245,7 @@ $$
 Entonces:
 
 $$
-b =
-\bar{y}
--
-\bar{x}
+b =\bar{y}-\bar{x}
 \frac{\sum_i (x_i-\bar{x})y_i}{S_{xx}}
 $$
 
