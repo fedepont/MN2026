@@ -264,9 +264,7 @@ $$
 b =
 \sum_i
 \left[
-\frac{1}{N}
--
-\frac{\bar{x}(x_i-\bar{x})}{S_{xx}}
+\frac{1}{N}-\frac{\bar{x}(x_i-\bar{x})}{S_{xx}}
 \right] y_i
 $$
 
@@ -286,11 +284,8 @@ $$
 La derivada es:
 
 $$
-\frac{\partial b}{\partial y_i}
-=
-\frac{1}{N}
--
-\frac{\bar{x}(x_i-\bar{x})}{S_{xx}}
+\frac{\partial b}{\partial y_i}=
+\frac{1}{N}-\frac{\bar{x}(x_i-\bar{x})}{S_{xx}}
 $$
 
 Si todos los puntos tienen la misma incertidumbre en $y$:
@@ -306,9 +301,7 @@ $$
 \sigma^2
 \sum_i
 \left[
-\frac{1}{N}
--
-\frac{\bar{x}(x_i-\bar{x})}{S_{xx}}
+\frac{1}{N}-\frac{\bar{x}(x_i-\bar{x})}{S_{xx}}
 \right]^2
 $$
 
@@ -319,10 +312,8 @@ $$
 \sigma^2
 \sum_i
 \left[
-\frac{1}{N^2}
--
-\frac{2\bar{x}}{N S_{xx}}(x_i-\bar{x})
-+
+\frac{1}{N^2}-
+\frac{2\bar{x}}{N S_{xx}}(x_i-\bar{x})+
 \frac{\bar{x}^2}{S_{xx}^2}(x_i-\bar{x})^2
 \right]
 $$
@@ -343,10 +334,7 @@ $$
 \sigma_b^2 =
 \sigma^2
 \left[
-\frac{N}{N^2}
-+
-0
-+
+\frac{N}{N^2}+0+
 \frac{\bar{x}^2}{S_{xx}^2}S_{xx}
 \right]
 $$
@@ -355,8 +343,7 @@ $$
 \sigma_b^2 =
 \sigma^2
 \left[
-\frac{1}{N}
-+
+\frac{1}{N}+
 \frac{\bar{x}^2}{S_{xx}}
 \right]
 $$
@@ -367,31 +354,22 @@ $$
 \sigma_b =
 \sigma
 \sqrt{
-\frac{1}{N}
-+
-\frac{\bar{x}^2}{S_{xx}}
-}
+\frac{1}{N}+
+\frac{\bar{x}^2}{S_{xx}}}
 $$
 
 Como normalmente no conocemos $\sigma$, usamos la estimación a partir de los residuos:
 
 $$
-s =
-\sqrt{
-\frac{\sum_i r_i^2}{N-2}
-}
+s =\sqrt{\frac{\sum_i r_i^2}{N-2}}
 $$
 
 Entonces:
 
 $$
-\sigma_b =
-s
+\sigma_b = s
 \sqrt{
-\frac{1}{N}
-+
-\frac{\bar{x}^2}{S_{xx}}
-}
+\frac{1}{N} + \frac{\bar{x}^2}{S_{xx}}}
 $$
 
 ---
@@ -480,15 +458,12 @@ $$
 \frac{s}{\sqrt{\sum_i (x_i-\bar{x})^2}}
 $$
 
-La incertidumbre de la ordenada al origen es:
+La incertidumbre de la ordenada al origen es :
 
 $$
-\sigma_b =
-s
+\sigma_b = s
 \sqrt{
-\frac{1}{N}
-+
-\frac{\bar{x}^2}{\sum_i (x_i-\bar{x})^2}
+\frac{1}{N} + \frac{\bar{x}^2}{\sum_i (x_i-\bar{x})^2}
 }
 $$
 
