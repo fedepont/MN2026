@@ -122,8 +122,7 @@ $$
 Como:
 
 $$
-\frac{\partial a}{\partial y_i}
-=
+\frac{\partial a}{\partial y_i}=
 \frac{x_i-\bar{x}}{S_{xx}}
 $$
 
